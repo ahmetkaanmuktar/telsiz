@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Telsiz temalı ses kaydedici - Seslerinizi telsiz efekti ile kaydedin ve WhatsApp'ta paylaşın">
+    <meta name="keywords" content="telsiz, ses kaydedici, voice recorder, walkie-talkie, WhatsApp">
+    <meta name="author" content="Telsiz Kaydedici">
+    <title>Telsiz Ses Kaydedici</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Arka Plan Telsiz Sesi -->
+        <audio id="backgroundRadio" src="videoplayback.mp4" loop preload="auto"></audio>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="radio-icon">📻</div>
+                <h1>Telsiz Ses Kaydedici</h1>
+            </div>
+            <p class="subtitle">Push-to-Talk ile kaydet, telsiz efekti ekle</p>
+            <button class="ambient-toggle" id="ambientToggle" title="Arka plan sesi aç/kapat">
+                🔊 Ortam Sesi
+            </button>
+        </header>
+
+        <!-- Main Recording Section -->
+        <main class="main-content">
+            <!-- PTT Button -->
+            <div class="ptt-section">
+                <div class="led-indicator" id="ledIndicator"></div>
+                <button class="ptt-button" id="pttButton">
+                    <span class="ptt-icon">🎙️</span>
+                    <span class="ptt-text">KAYDET</span>
+                </button>
+                <div class="recording-timer" id="recordingTimer">00:00</div>
+            </div>
+
+            <!-- Waveform Visualizer -->
+            <div class="waveform-container">
+                <canvas id="waveformCanvas"></canvas>
+            </div>
+
+            <!-- Audio Preview Section -->
+            <div class="preview-section hidden" id="previewSection">
+                <h3>Kayıt Önizleme</h3>
+                <div class="preview-controls">
+                    <audio controls id="audioPreview"></audio>
+                    <div class="preview-actions">
+                        <button class="btn btn-primary" id="shareWhatsAppBtn">
+                            <span>📱</span> WhatsApp'ta Paylaş
+                        </button>
+                        <button class="btn btn-secondary" id="downloadBtn">
+                            <span>💾</span> İndir
+                        </button>
+                        <button class="btn btn-danger" id="discardBtn">
+                            <span>🗑️</span> Sil
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Effect Controls -->
+            <div class="effect-controls">
+                <label for="effectIntensity">Telsiz Efekti:</label>
+                <select id="effectIntensity">
+                    <option value="low">Hafif</option>
+                    <option value="medium" selected>Orta</option>
+                    <option value="high">Yoğun</option>
+                </select>
+            </div>
+
+            <!-- Recording History -->
+            <div class="history-section">
+                <h3>Kayıt Geçmişi <span class="badge" id="historyCount">0</span></h3>
+                <div class="history-list" id="historyList">
+                    <p class="empty-state">Henüz kayıt yok</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h4>💡 Nasıl Kullanılır?</h4>
+            <ul>
+                <li><strong>KAYDET</strong> butonuna tıklayın veya <kbd>Space</kbd> tuşuna basılı tutun</li>
+                <li>Mikrofona konuşun (max 60 saniye)</li>
+                <li>Tekrar tıklayın veya <kbd>Space</kbd>'i bırakın</li>
+                <li>Kaydınızı dinleyin ve WhatsApp'ta paylaşın!</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Telsiz Ses Kaydedici &copy; 2025 | Web Audio API ile yapıldı</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- JavaScript Modules -->
+    <script src="audio-recorder.js"></script>
+    <script src="audio-effects.js"></script>
+    <script src="waveform.js"></script>
+    <script src="storage.js"></script>
+    <script src="share.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

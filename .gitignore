@@ -1,0 +1,46 @@
+# OS dosyaları
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE ve Editor dosyaları
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Log dosyaları
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency dizinleri (gelecekte gerekirse)
+node_modules/
+bower_components/
+
+# Build dosyaları
+dist/
+build/
+*.min.js
+*.min.css
+
+# Geçici dosyalar
+*.tmp
+*.temp
+.cache/
+
+# Environment dosyaları
+.env
+.env.local
+.env.*.local
