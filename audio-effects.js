@@ -91,10 +91,10 @@ class AudioEffects {
 
             // Ses seviyeleri ayarla
             const recordedGain = offlineContext.createGain();
-            recordedGain.gain.value = 8.0; // Kaydedilen ses 8x MAKSİMUM BOOST!
+            recordedGain.gain.value = 1.0; // Kaydedilen ses doğal seviyede
 
             const backgroundGain = offlineContext.createGain();
-            backgroundGain.gain.value = 0.05; // Arka plan sesi %5 (çok hafif fonda)
+            backgroundGain.gain.value = 0.3; // Arka plan sesi %30 (net duyulacak seviyede)
 
             // Bağlantılar
             recordedSource.connect(recordedGain);
